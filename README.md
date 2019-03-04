@@ -1,6 +1,6 @@
 DataQualityToolkit
 ==================
-Python toolkit for evaluating and visualizing the data quality of excel spreadsheets
+A Python toolkit for evaluating and visualizing the data quality of excel spreadsheets or other tabular data 
 
 ![Alt text](DQToolkit.png?raw=true "DQToolkit Visual")
 
@@ -31,13 +31,13 @@ Production examples: https://www.opencpm.com
 Functionality
 =============
 
-NB: The 0.1 release is a heavily alpha version. 
+NB: The 0.2 release is (still) a heavily alpha version. 
 
 You can use DataQualityToolkit to:
 - Automatically produce validation reports and visualizations given an existing set validation rules
 - Add to the validation rules
-- There is an assumption that the spreadsheets are formatted in standard columnar format with 
-all worksheet starting at the same header row
+- There is an assumption that the spreadsheets are formatted in standard columnar format with all worksheet starting at the same header row
+- There are many assumptions about the structure of wikitables (www source)
 
 File structure
 ==============

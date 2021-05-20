@@ -20,7 +20,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
 from DQToolkit import Rule
-from DQToolkit import WWWDataSource
+from DQToolkit import WikiDataSource
 
 # Set the remote URL where we will fetch data from (obviously it must be accessible!)
 url = "https://en.wikipedia.org/wiki/List_of_data_breaches"
@@ -28,12 +28,12 @@ url = "https://en.wikipedia.org/wiki/List_of_data_breaches"
 # Instantiate a validation rule object
 MyRule = Rule()
 # Check the available rules
-MyRule.rule_data()
+MyRule.show_rules()
 
 MyRule.activate('R4')
 
 # Instantiate a datasource object
-MySource = WWWDataSource(url)
+MySource = WikiDataSource(url)
 MySource.validate_all(MyRule)
 r = []
 theta = []

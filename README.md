@@ -8,7 +8,7 @@ Purpose of the project
 ======================
 
 DataQualityToolkit is a Python powered library for the evaluation and visualization of the data 
-quality of data provided in excel spreadsheets, csv files or other tabular data. 
+quality of data provided in excel spreadsheets, csv files or other tabular data fetched from the web
 
 
 General Info
@@ -25,13 +25,12 @@ Training: Open Risk Academy, https://www.openriskacademy.com/login/index.php
 
 Development website: https://github.com/open-risk/DataQualityToolkit
 
-Production examples: https://www.opencpm.com
 
 
 Functionality
 =============
 
-NB: The 0.2 release is (still) a heavily alpha version. 
+NB: The 0.2 release is (still) a heavily (pre-)alpha version. 
 
 You can use DataQualityToolkit to:
 - Automatically produce validation reports and visualizations given an existing set of validation rules

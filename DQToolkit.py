@@ -153,7 +153,7 @@ class XLSDataSource(DataSource):
         """
         DataSource.__init__(self)
         # Read the excel file from disk
-        self.xls = pd.ExcelFile(filename)
+        self.xls = pd.ExcelFile(filename, engine="openpyxl")
         # Frame names are the sheet names
         self.frame_names = self.xls.sheet_names
         # Number of sheets / frames
@@ -177,7 +177,7 @@ class XLSDataSource(DataSource):
     #             self.results[self.sheet_names[frame]][col] = Validation_Rule.apply(series)
 
 
-class WWWDataSource(DataSource):
+class WikiDataSource(DataSource):
     """ The _`WWWDataSource` object implements a wikitable data source
     The class inherits from DataSource_
 
@@ -203,21 +203,18 @@ class WWWDataSource(DataSource):
 
         """
         DataSource.__init__(self)
-        # TODO Current implementation assumes there is only single table per page (index 0)
+        # TODO Current implementation assumes there is only single table per wiki page (index 0)
         # Read the wikitable from the URL and create the dataframe
-        self.df[0] = pd.read_html(url, attrs={"class": "wikitable"})[0]
-
-        # Reshape the dataframe (turn first row into column names)
-        # Determine and set column data types
-        self.df[0].columns = self.df[0].iloc[0]
+        self.df[0] = pd.read_html(url, attrs={"class": "wikitable"}, header=0)[0]
         self.col_datatypes = list(self.df[0].iloc[1])
+        print(self.col_datatypes)
+        print(self.df[0].dtypes)
+
         self.df[0].drop(self.df[0].index[[0, 1]], inplace=True)
         self.col_names[0] = list(self.df[0])
 
         # self.df[0].drop(self.df[0].index[1])
         # self.df[0].reindex()
-
-        print(self.col_datatypes)
 
         # self.df[0].drop(self.df[0].index[1])
         # self.df[0].reindex()
@@ -229,9 +226,7 @@ class WWWDataSource(DataSource):
         #     self.df[0][col] = self.df[0][col].astype(self.col_datatypes[c])
         #     c +=1
 
-        pd.to_numeric(self.df[0])
-
-        print(self.df[0].dtypes)
+        # pd.to_numeric(self.df[0])
 
         # Determine column length
         self.col_length[0] = self.df[0].count
@@ -273,7 +268,10 @@ class Rule(object):
         :param rule_name:
         :return:
         """
-        return self.rule_dict[rule_name]
+        if rule_name is None:
+            print('Please provide a rule name')
+        else:
+            return self.rule_dict[rule_name]
 
     def show_rules(self):
         """ Display all the currently available Validation Rules

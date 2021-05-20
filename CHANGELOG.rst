@@ -1,6 +1,11 @@
 DataQualityToolkit Change Log
 =============================
 
+v0.3.0 (03-07-2020)
+===================
+* Extension to capture timeseries encoded in JSON files
+* Updated requirements.txt
+
 v0.2.1 (09-01-2019)
 ===================
 * First extension to capture web data sources

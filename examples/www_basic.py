@@ -17,7 +17,7 @@
 """
 
 from DQToolkit import Rule
-from DQToolkit import WWWDataSource
+from DQToolkit import WikiDataSource
 
 # Set the remote URL where we will fetch data from (obviously it must be accessible!)
 url = "https://en.wikipedia.org/wiki/List_of_data_breaches"
@@ -34,7 +34,7 @@ MyRule.activate('R1')
 MyRule.show_active_rule()
 
 # Instantiate a datasource object
-MySource = WWWDataSource(url)
+MySource = WikiDataSource(url)
 
 # # Summary the data we received
 # MySource.describe(verbosity=1)

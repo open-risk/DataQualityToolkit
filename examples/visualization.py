@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-# (c) 2018-2019 Open Risk, all rights reserved
+# (c) 2018-2022 Open Risk, all rights reserved
 #
 # DataQualityToolkit is licensed under the Apache 2.0 license a copy of which is included
 # in the source distribution of TransitionMatrix. This is notwithstanding any licenses of
@@ -41,7 +41,6 @@ colors = []
 dt = 2 * np.pi / MySource.result_no
 dr = 0.02
 ts = 0
-
 
 for col in MySource.results:
     ts = ts + dt

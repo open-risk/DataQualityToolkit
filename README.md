@@ -25,7 +25,7 @@ Training: Open Risk Academy, https://www.openriskacademy.com/login/index.php
 
 Development website: https://github.com/open-risk/DataQualityToolkit
 
-
+Discussion: https://www.openriskcommons.org/
 
 Functionality
 =============

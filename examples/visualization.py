@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-# (c) 2018-2022 Open Risk, all rights reserved
+# (c) 2018-2023 Open Risk, all rights reserved
 #
 # DataQualityToolkit is licensed under the Apache 2.0 license a copy of which is included
 # in the source distribution of TransitionMatrix. This is notwithstanding any licenses of
@@ -16,9 +16,10 @@
 
 """
 
-import numpy as np
-import matplotlib.pyplot as plt
 import matplotlib.cm as cm
+import matplotlib.pyplot as plt
+import numpy as np
+
 from DQToolkit import Rule
 from DQToolkit import WikiDataSource
 

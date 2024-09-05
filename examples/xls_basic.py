@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-# (c) 2018-2023 Open Risk, all rights reserved
+# (c) 2018-2024 Open Risk, all rights reserved
 #
 # DataQualityToolkit is licensed under the Apache 2.0 license a copy of which is included
 # in the source distribution of TransitionMatrix. This is notwithstanding any licenses of

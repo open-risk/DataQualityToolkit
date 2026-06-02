@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-# (c) 2018-2024 Open Risk, all rights reserved
+# (c) 2018-2026 Open Risk, all rights reserved
 #
 # DataQualityToolkit is licensed under the Apache 2.0 license a copy of which is included
 # in the source distribution of TransitionMatrix. This is notwithstanding any licenses of
@@ -20,15 +20,15 @@ from DQToolkit import Rule
 from DQToolkit import WikiDataSource
 
 # Set the remote URL where we will fetch data from (obviously it must be accessible!)
-url = "https://en.wikipedia.org/wiki/List_of_data_breaches"
+# url = "https://en.wikipedia.org/wiki/List_of_data_breaches"
 url = "https://www.openriskmanual.org/wiki/Data_Breaches_List"
 
 # Instantiate a validation rule object
 MyRule = Rule()
-# Lets check the available rules
+# Let's check the available rules
 MyRule.show_rules()
 
-# Lets try first to see if fields are populated (R1)
+# Let's try first to see if fields are populated (R1)
 MyRule.activate('R1')
 # Double check we have the desired active rule
 MyRule.show_active_rule()

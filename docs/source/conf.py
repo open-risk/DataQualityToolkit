@@ -22,13 +22,13 @@ sys.path.insert(0, os.path.abspath('../../'))
 # -- Project information -----------------------------------------------------
 
 project = 'DataQualityToolkit'
-copyright = '2019 - 2024, Open Risk (https://www.openriskmanagement.com)'
+copyright = '2018 - 2026, Open Risk (https://www.openriskmanagement.com)'
 author = 'Open Risk'
 
 # The short X.Y version
 version = '0.3'
 # The full version, including alpha/beta/rc tags
-release = '0.3.0'
+release = '0.3.1'
 
 
 # -- General configuration ---------------------------------------------------
@@ -61,7 +61,7 @@ master_doc = 'index'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = 'en'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.

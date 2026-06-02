@@ -1,12 +1,12 @@
 beautifulsoup4
 Jinja2
-lxml
+lxml==6.1.0
 MarkupSafe
 matplotlib
 numpy
 openpyxl
 pandas
-Pillow
+Pillow==12.2.0
 Pygments
 python-dateutil
 xlrd

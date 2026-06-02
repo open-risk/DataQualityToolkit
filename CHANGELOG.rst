@@ -1,6 +1,11 @@
 DataQualityToolkit Change Log
 =============================
 
+v0.3.1 (02-06-2026)
+===================
+
+* Basic documentation with Sphinx
+
 v0.3.0 (03-07-2020)
 ===================
 

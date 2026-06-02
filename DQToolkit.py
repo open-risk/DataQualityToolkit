@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-# (c) 2018-2024 Open Risk, all rights reserved
+# (c) 2018-2026 Open Risk, all rights reserved
 #
 # DataQualityToolkit is licensed under the Apache 2.0 license a copy of which is included
 # in the source distribution of TransitionMatrix. This is notwithstanding any licenses of
@@ -14,7 +14,7 @@
 
 """ The DQToolkit module provides the objects implementing the Data Quality Toolkit functionality
 
-* DataSource and derived objects implement sources of tabular data (currently excel sheets, wikitables)
+* DataSource and derived objects implement sources of tabular data (currently Excel sheets, wikitables)
 * Rule implements the validation rules
 
 """
@@ -28,7 +28,7 @@ import pandas as pd
 #
 
 class DataSource(object):
-    """ The _`DataSource` object implements a generic source of tabular data
+    """ The _`DataSource` object implements a generic source of tabular data.
 
 
     """
@@ -129,9 +129,9 @@ class DataSource(object):
 #
 
 class XLSDataSource(DataSource):
-    """ The _`XLSDataSource` object implements an excel sheet data source.
-    It treats each excel sheet as a distinct table
-    The class inherits from DataSource_
+    """ The _`XLSDataSource` object implements an Excel sheet data source.
+
+    It treats each Excel sheet as a distinct table. The class inherits from DataSource_
 
 
     """
@@ -152,7 +152,7 @@ class XLSDataSource(DataSource):
 
         """
         DataSource.__init__(self)
-        # Read the excel file from disk
+        # Read the Excel file from disk
         self.xls = pd.ExcelFile(filename, engine="openpyxl")
         # Frame names are the sheet names
         self.frame_names = self.xls.sheet_names
@@ -178,28 +178,28 @@ class XLSDataSource(DataSource):
 
 
 class WikiDataSource(DataSource):
-    """ The _`WWWDataSource` object implements a wikitable data source
+    """ The _`WikiDataSource` object implements a wikitable data source.
+
     The class inherits from DataSource_
+
 
     """
 
     def __init__(self, url):
-        """ Create a new web data source
+        """ Create a new wiki data source
 
         :param url: the webpage hosting the wikitable (must be accessible)
 
-        .. note:: The initialization in itself does not validate if the web page is accessible
+        .. note:: The initialization in itself does not validate if the wiki page is accessible
 
-        .. note:: Because wikitables (and html tables more generally) do not store type metadata the
-        assumption is that there is a specific row in the table (second row) that stores type information
-        in pandas format. During initialization, there is a validatin step
+        .. note:: Because wikitables (and html tables more generally) do not store type metadata the assumption is that there is a specific row in the table (second row) that stores type information in pandas format. During initialization, there is a validation step.
 
         :Example:
 
         .. code-block:: python
 
             url = "https://en.wikipedia.org/wiki/List_of_data_breaches"
-            MySource = WWWDataSource(url)
+            MySource = WikiDataSource(url)
 
         """
         DataSource.__init__(self)
@@ -239,7 +239,7 @@ class WikiDataSource(DataSource):
 
 
 class Rule(object):
-    """ The _`Rule` object implements a collection of validation rules
+    """ The _`Rule` object implements a collection of validation rules.
 
 
     """
@@ -330,10 +330,10 @@ class Rule(object):
     #
     # Rule Functions
     #
-    def IsPopulated(x):
+    def IsPopulated(self, x):
         return not pd.isnull(x)
 
-    def IsPositive(x):
+    def IsPositive(self, x):
         if isinstance(x, (int, float)):
             if x < 0:
                 return False
@@ -342,7 +342,7 @@ class Rule(object):
         else:
             return np.NaN
 
-    def IsAtLeast(x, *args):
+    def IsAtLeast(self, x, *args):
         a = args[0]
         if isinstance(x, (int, float)):
             if a <= x:
@@ -352,7 +352,7 @@ class Rule(object):
         else:
             return [np.NaN]
 
-    def IsAtMost(x, *args):
+    def IsAtMost(self, x, *args):
         a = args[0]
         if isinstance(x, (int, float)):
             if x <= a:
@@ -362,7 +362,7 @@ class Rule(object):
         else:
             return [np.NaN]
 
-    def InRange(x, *args):
+    def InRange(self, x, *args):
         a = args[0]
         b = args[1]
         if isinstance(x, (int, float)):
@@ -373,20 +373,20 @@ class Rule(object):
         else:
             return [np.NaN]
 
-    def IsType(x, *args):
+    def IsType(self, x, *args):
         control_type = args[0]
         if type(x).__name__ == control_type:
             return True
         else:
             return False
 
-    def IsString(x):
+    def IsString(self, x):
         if not (isinstance(x, (int, float)) or type(x).__name__ in ['Timestamp', 'time', 'datetime']) and len(x) > 0:
             return True
         else:
             return False
 
-    def InList(x, *args):
+    def InList(self, x, *args):
         if x in args:
             return True
         else:

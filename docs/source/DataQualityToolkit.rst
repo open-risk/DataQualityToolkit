@@ -27,7 +27,7 @@ XLSDataSource
 WWWDataSource
 ~~~~~~~~~~~~~~~~~~~
 
-.. autoclass:: DQToolkit.WWWDataSource
+.. autoclass:: DQToolkit.WikiDataSource
    :members:
 
    .. automethod:: __init__
@@ -39,6 +39,8 @@ Rule
    :members:
 
    .. automethod:: __init__
+
+
 
 
 

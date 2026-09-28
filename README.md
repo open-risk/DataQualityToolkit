@@ -1,6 +1,7 @@
 DataQualityToolkit
 ==================
-A Python toolkit for evaluating and visualizing the data quality of excel spreadsheets, csv files or other tabular data 
+
+A Python toolkit for evaluating and visualizing the data quality of spreadsheets, csv files or other tabular data 
 
 ![Alt text](DQToolkit.png?raw=true "DQToolkit Visual")
 
